@@ -1,9 +1,12 @@
 import urllib.parse
 import requests
-from datetime import datetime, date
 
 main_api = "https://www.mapquestapi.com/directions/v2/route?"
-key = "k2BGKwAMKCqQB7KpRhTiC9fPY7OfCZsM"
+orig = "Washington, D.C."
+dest = "Baltimore, MD"
+key = "PL3t1O9pauSij1Lk1GYAYNwbGeRVlXT4"
+
+
 now = date.today()
 
 
@@ -36,7 +39,7 @@ while True:
        
        print("API Status: " +  str(json_status) + " = A successful route call.\n")
        print("=============================================")
-       print("GROUP 3")
+       print("Welcome to GROUP 3 4ITH")
        print("The Date Today is: ")
        print(now)
        print("**********************************************")
