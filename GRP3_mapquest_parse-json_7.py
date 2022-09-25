@@ -39,8 +39,7 @@ while True:
 
        
        print("API Status: " +  str(json_status) + " = A successful route call.\n")
-       print("=============================================")
-       print("Welcome to GROUP 3 4ITH")
+       print("**********************************************")
        print("The Date Today is: ")
        print(now)
        print("**********************************************")
@@ -52,7 +51,7 @@ while True:
        print("Kilometers:      " + str("{:.2f}".format((json_data["route"]["distance"])*1.61)))
        print("Fuel Used (Liter): " + str("{:.2f}".format((json_data["route"]["fuelUsed"])*3.78)))
        print("                                              ")
-       print("=============================================")
+       print("**********************************************")
    elif json_status == 402:
           print("**********************************************")
 
