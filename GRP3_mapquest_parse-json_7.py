@@ -10,7 +10,7 @@ key = "PL3t1O9pauSij1Lk1GYAYNwbGeRVlXT4"
 now = date.today()
 
 
-name = input("Please Enter Traveller's Name: ")
+name = input("What is Your Name, Traveller?: ")
 
 while True:
 
