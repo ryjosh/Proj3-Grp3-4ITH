@@ -36,7 +36,7 @@ while True:
        
        print("API Status: " +  str(json_status) + " = A successful route call.\n")
        print("=============================================")
-       print("Welcome to TEAM SECRET COMPANY")
+       print("GROUP 3")
        print("The Date Today is: ")
        print(now)
        print("**********************************************")
