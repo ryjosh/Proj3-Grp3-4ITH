@@ -12,7 +12,7 @@ now = date.today()
 
 
 name = input("What is Your Name, Traveller?: ")
-
+vehicle = input("What vehicle are you using?: ")
 while True:
 
    
@@ -45,7 +45,8 @@ while True:
        print(now)
        print("**********************************************")
        print("                                              ")
-       print("Welcome " +(name))
+       print("Hello there,  " +(name))
+       print("Your vehicle is: " +(vehicle))
        print("Directions from " +  (orig) + " to " + (dest))
        print("Trip Duration:   " + (json_data["route"]["formattedTime"]))
        print("Kilometers:      " + str("{:.2f}".format((json_data["route"]["distance"])*1.61)))
