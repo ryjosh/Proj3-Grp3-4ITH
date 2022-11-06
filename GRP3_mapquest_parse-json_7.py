@@ -7,7 +7,7 @@ main_api = "https://www.mapquestapi.com/directions/v2/route?"
 key = "k2BGKwAMKCqQB7KpRhTiC9fPY7OfCZsM"
 now = date.today()
 
-name = input(Fore.BLUE + "Please Enter Traveller's Name: ")
+name = input(Fore.BLUE + "Please Enter Traveller's Namee: ")
 print("                                              ")
 print(Fore.RED + "Class 1 Vehicles: CAR \n, Van \n, Pick-Up \n, Motorcycle \n")
 print(Fore.RED + "Class 2 Vehicles: Bus\n, Truck \n")
