@@ -1,7 +1,7 @@
+from datetime import datetime, date
+from colorama import Fore, Back, Style
 import urllib.parse
 import requests
-from colorama import Fore, Back, Style
-from datetime import datetime, date
 
 main_api = "https://www.mapquestapi.com/directions/v2/route?"
 orig = "San Francisco, CA"
