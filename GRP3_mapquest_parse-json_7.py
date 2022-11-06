@@ -39,7 +39,8 @@ while True:
               " = A successful route call.\n")
         print(Fore.BLUE + "=============================================")
         print(Fore.RED + "Welcome to Group 3, 4ITH")
-        print(Fore.RED + "The Date Today is: " + (now))
+        print(Fore.RED + "The Date Today is: ")
+        print(now)
 
         print(Fore.BLUE + "**********************************************")
         print("                                              ")
@@ -53,7 +54,7 @@ while True:
         print(Fore.RED + "Kilometers:      " +
               str("{:.2f}".format((json_data["route"]["distance"]) * 1.61)))
         print(Fore.RED + "Fuel Used (Liter): " +
-              str("{:.2f}".format((json_data["route"]["fuelUsed"]) * 3.78)))
+              str("{:.2f}".format((json_data["route"]["distance"]) * 3.78)))
         print("                                              ")
         print(Fore.BLUE + "=============================================")
     elif json_status == 402:
