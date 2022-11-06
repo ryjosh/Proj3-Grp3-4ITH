@@ -1,25 +1,39 @@
-from datetime import datetime, date
-from colorama import Fore, Back, Style
 import urllib.parse
 import requests
+from colorama import Fore, Back, Style
+from datetime import datetime, date
 
 main_api = "https://www.mapquestapi.com/directions/v2/route?"
-orig = "San Francisco, CA"
-dest = "Los Angeles, CA"
-key = "PL3t1O9pauSij1Lk1GYAYNwbGeRVlXT4"
+key = "k2BGKwAMKCqQB7KpRhTiC9fPY7OfCZsM"
 now = date.today()
 
-name = input("What's your name?: ")
-vehicle = input("What's your vehicle?: ")
-plate = input("What's your plate number?: ")
+name = input(Fore.BLUE + "Please Enter Traveller's Name: ")
+print("                                              ")
+print(Fore.RED + "Class 1 Vehicles: CAR \n, Van \n, Pick-Up \n, Motorcycle \n")
+print(Fore.RED + "Class 2 Vehicles: Bus\n, Truck \n")
+print(Fore.RED + "Class 3 Vehicles: Large Truck \n, Truck with trailer\n")
+print("                                              ")
+vehicle = input(Fore.BLUE + "Input what type of class of vehicles (1-3): ")
+print("                                              ")
+car = input(Fore.BLUE + "What is your car?: ")
+print("                                              ")
+plate = input(Fore.BLUE + "Please enter your plate number: ")
+print("                                              ")
 
 while True:
-    orig = input("Source Location: ")
+
+    orig = input(Fore.BLUE + "Source Location: ")
+    print("                                              ")
+
     if orig == "quit" or orig == "q":
+
         break
 
-    dest = input("End Location: ")
+    dest = input(Fore.BLUE + "End Location: ")
+    print("                                              ")
+
     if dest == "quit" or dest == "q":
+
         break
     url = main_api + urllib.parse.urlencode({
         "key": key,
@@ -27,7 +41,7 @@ while True:
         "to": dest
     })
 
-    print("URL: " + (url))
+    print(Fore.GREEN + "URL: " + (url))
 
     json_data = requests.get(url).json()
 
@@ -35,55 +49,53 @@ while True:
 
     if json_status == 0:
 
-        print(Fore.RED + "API Status: " + str(json_status) +
+        print(Fore.GREEN + "API Status: " + str(json_status) +
               " = A successful route call.\n")
-        print(Fore.BLUE + "=============================================")
-        print(Fore.RED + "Welcome to Group 3, 4ITH")
-        print(Fore.RED + "The Date Today is: ")
+        print(Fore.RED + "=============================================")
+        print(Fore.GREEN + " Welcome to TEAM SECRET COMPANY")
+        print(Fore.GREEN + "The Date Today is: ")
         print(now)
-
-        print(Fore.BLUE + "**********************************************")
+        print(Fore.RED + "**********************************************")
         print("                                              ")
-        print(Fore.GREEN + "Welcome, " + (name))
-        print(Fore.RED + "Directions from " + (orig) + " to " + (dest))
+        print(Fore.GREEN + "Welcome " + (name))
+        print(Fore.GREEN + "Class of your vehicle is " + (vehicle))
+        print(Fore.GREEN + "You own a " + (car))
+        print(Fore.GREEN + "Your plate number is:  " + (plate))
         print("                                              ")
-        print(Fore.RED + "Vehicle Used: " + (vehicle))
-        print(Fore.RED + "Plate no.: " + (plate))
-        print(Fore.RED + "Trip Duration:   " +
+        print(Fore.GREEN + "Directions from " + (orig) + " to " + (dest))
+        print(Fore.GREEN + "Trip Duration:   " +
               (json_data["route"]["formattedTime"]))
-        print(Fore.RED + "Kilometers:      " +
+        print(Fore.GREEN + "Kilometers:      " +
               str("{:.2f}".format((json_data["route"]["distance"]) * 1.61)))
-        print(Fore.RED + "Fuel Used (Liter): " +
+        print(Fore.GREEN + "Fuel Used (Liter): " +
               str("{:.2f}".format((json_data["route"]["distance"]) * 3.78)))
+        print(Fore.GREEN + "Fuel Cost (USD): " +
+              str("{:.2f}".format((json_data["route"]["distance"]) * 3.78 *
+                                  (1.038))))
         print("                                              ")
-        print(Fore.BLUE + "=============================================")
+        print(Fore.RED + "=============================================")
     elif json_status == 402:
-        print(Fore.BLUE + "**********************************************")
+        print(Fore.RED + "**********************************************")
 
-        print("Status Code: " + str(json_status) +
+        print(Fore.GREEN + "Status Code: " + str(json_status) +
               "; Invalid user inputs for one or both locations.")
 
-        print(Fore.BLUE + "**********************************************\n")
+        print(Fore.RED + "**********************************************\n")
 
     elif json_status == 611:
-        print("**********************************************")
+        print(Fore.RED + "**********************************************")
 
-        print(Fore.RED + "Status: " + str(json_status) +
+        print(Fore.GREEN + "Status Code: " + str(json_status) +
               "; Missing an entry for one or both locations.")
 
-        print("**********************************************\n")
+        print(Fore.RED + "**********************************************\n")
     else:
         print(
+            Fore.RED +
             "************************************************************************"
         )
 
-        print(Fore.RED + " For Staus Code: " + str(json_status) +
+        print(Fore.GREEN + "For Staus Code: " + str(json_status) +
               "; Refer to:")
 
-        print(
-            "https://developer.mapquest.com/documentation/directions-api/status-codes"
-        )
-
-        print(
-            "************************************************************************\n"
-        )
+... (9 lines left)
