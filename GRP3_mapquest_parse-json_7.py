@@ -98,4 +98,12 @@ while True:
         print(Fore.GREEN + "For Staus Code: " + str(json_status) +
               "; Refer to:")
 
-... (9 lines left)
+        print(
+            Fore.GREEN +
+            "https://developer.mapquest.com/documentation/directions-api/status-codes"
+        )
+
+        print(
+            Fore.RED +
+            "************************************************************************\n"
+        )
